@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ #grad1 {
+        height: 200px;
+        background: radial-gradient(circle, pink 10%, rgb(142, 150, 254) 60%);
+    }
+    @keyframes example {
+        0% {background-color: rgb(255, 176, 176);}
+        25% {background-color: rgb(251, 251, 162);}
+        50% {background-color: rgb(180, 255, 180);}
+        100% {background-color: rgb(180, 180, 255);}
+    }
+.box {
+        width: 150px;          
+        height: 150px;
+        background-color: rgb(251, 176, 176);
+        animation-name: example;
+        animation-duration: 59s;
+        margin-top: 20px;      
+    }
+
+</style>
+</head>
+
+<body>
+
+<div id="grad1"></div>
+
+<div class="box">
+    Hello!!
+</div>
+
+</body>
+</html>
+

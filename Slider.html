@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Japan Scenery Slider</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h1>Sceneries of Japan</h1>
+        <p>Simple image slider</p>
+    </div>
+
+    <div class="container text-center">
+        <img id="myImage" src="image1.jpg" class="img-fluid">
+
+        <br><br>
+        <button class="btn btn-primary" onclick="prev()">Previous</button>
+        <button class="btn btn-success" onclick="next()">Next</button>
+
+    </div>
+
+    <script>
+        var images = ["image1.jpg", "image2.jpg", "image3.jpg"];
+        var position = 0;
+
+        function next() {
+            position = position + 1;
+
+            if (position == 3) {
+                position = 0;
+            }
+
+            document.getElementById("myImage").src = images[position];
+        }
+
+        function prev() {
+            position = position - 1;
+
+            if (position < 0) {
+                position = 2;
+            }
+
+            document.getElementById("myImage").src = images[position];
+        }
+    </script>
+
+</body>
+</html>

@@ -2,48 +2,56 @@
 <html>
 <head>
     <title>Japan Scenery Slider</title>
+
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        .slider img {
+            display: none;
+            max-height: 400px;
+        }
+
+       
+        .slider img:first-child {
+            display: block;
+        }
+
+        
+        .slider img:target {
+            display: block;
+        }
+
+        
+        .slider img:target ~ img {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="jumbotron text-center">
-        <h1>Sceneries of Japan</h1>
-        <p>Simple image slider</p>
+
+<div class="jumbotron text-center">
+    <h1>Sceneries of Japan</h1>
+    <p>Pure HTML & CSS Slider</p>
+</div>
+
+<div class="container text-center">
+
+    <div class="slider">
+        <img id="img1" src="image1.jpg" class="img-fluid">
+        <img id="img2" src="image2.jpg" class="img-fluid">
+        <img id="img3" src="image3.jpg" class="img-fluid">
     </div>
 
-    <div class="container text-center">
-        <img id="myImage" src="image1.jpg" class="img-fluid">
+    <br>
 
-        <br><br>
-        <button class="btn btn-primary" onclick="prev()">Previous</button>
-        <button class="btn btn-success" onclick="next()">Next</button>
+    
+    <a href="#img3" class="btn btn-primary">Prev</a>
+    <a href="#img2" class="btn btn-success">Next</a>
 
-    </div>
-
-    <script>
-        var images = ["image1.jpg", "image2.jpg", "image3.jpg"];
-        var position = 0;
-
-        function next() {
-            position = position + 1;
-
-            if (position == 3) {
-                position = 0;
-            }
-
-            document.getElementById("myImage").src = images[position];
-        }
-
-        function prev() {
-            position = position - 1;
-
-            if (position < 0) {
-                position = 2;
-            }
-
-            document.getElementById("myImage").src = images[position];
-        }
-    </script>
+</div>
 
 </body>
 </html>
+

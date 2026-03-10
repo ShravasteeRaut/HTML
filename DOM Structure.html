@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accessing Values with DOM</title>
+</head>
+
+<body>
+
+<h1 id="title">Learning HTML DOM</h1>
+
+<button onclick="showTitle()">Click Me</button>
+
+<p id="para1"></p>
+<p id="para2"></p>
+
+<script>
+function showTitle() {
+
+    // Get the text from the title
+    let text = document.getElementById("title").textContent;
+
+    // Display the same text in two paragraphs
+    document.getElementById("para1").textContent = text;
+    document.getElementById("para2").textContent = text;
+
+}
+</script>
+
+</body>
+</html>
